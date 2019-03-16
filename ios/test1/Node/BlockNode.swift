@@ -38,10 +38,10 @@ class BlockNode: SKShapeNode {
         fatalError("init(coder:) has not been implemented")
     }
 }
-enum BlockStatus {
-    case stop
-    case slow
-    case fast
+enum BlockStatus: Int {
+    case stop = 3
+    case slow = 2
+    case fast = 1
 }
 
 enum BlockMode {

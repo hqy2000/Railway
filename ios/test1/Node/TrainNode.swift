@@ -27,7 +27,7 @@ class TrainNode: SKShapeNode {
         line.addLine(to: CGPoint(x: -7.0, y: 3.0))
         line.addLine(to: CGPoint(x: -2.5, y: 3.0))
         line.closeSubpath()
-        self.fillColor = .red
+        self.fillColor = .gray
         self.lineWidth = 0
         self.path = line
         //self.zRotation = .pi * 0.5
