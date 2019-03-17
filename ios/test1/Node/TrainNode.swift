@@ -12,7 +12,7 @@ import SpriteKit
 class TrainNode: SKShapeNode {
     public let direction: TrackNode.Direction
     let fast = 20.0
-    let slow = 10.0
+    let slow = 5.0
     public var trainSpeed: Double = 0.0 {
         didSet {
             switch self.status {
