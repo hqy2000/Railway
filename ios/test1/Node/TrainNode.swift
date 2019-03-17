@@ -10,7 +10,41 @@ import Foundation
 import SpriteKit
 
 class TrainNode: SKShapeNode {
-    override init() {
+    public let direction: TrackNode.Direction
+    let fast = 20.0
+    let slow = 10.0
+    public var trainSpeed: Double = 0.0 {
+        didSet {
+            switch self.status {
+            case .acceleratingToSlowMode:
+                if self.trainSpeed > self.slow {
+                    self.status = .maintainingSlowMode
+                    self.trainSpeed = self.slow
+                }
+            case .acceleratingToFastMode:
+                if self.trainSpeed > self.fast {
+                    self.status = .maintainingFastMode
+                    self.trainSpeed = self.fast
+                }
+            case .deceleratingToSlowMode:
+                if self.trainSpeed < self.slow {
+                    self.status = .maintainingSlowMode
+                    self.trainSpeed = self.slow
+                }
+            case .deceleratingToStop:
+                if self.trainSpeed < 0.0 {
+                    self.status = .stopped
+                    self.trainSpeed = 0
+                }
+            default:
+                break
+            }
+        }
+    }
+    public var status: Status = .stopped
+    
+    init(direction: TrackNode.Direction = .inBound) {
+        self.direction = direction
         super.init()
         let line = CGMutablePath()
         /*
@@ -35,5 +69,15 @@ class TrainNode: SKShapeNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    enum Status {
+        case acceleratingToSlowMode
+        case acceleratingToFastMode
+        case deceleratingToSlowMode
+        case deceleratingToStop
+        case maintainingSlowMode
+        case maintainingFastMode
+        case stopped
     }
 }
