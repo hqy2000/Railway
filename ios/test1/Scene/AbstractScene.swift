@@ -14,7 +14,7 @@ class AbstractScene: SKScene {
     internal var trainsToPlace: [TrainNode] = []
     
     internal var totalCount: Int = 0
-    internal var lastCountTime: TimeInterval = 0
+    internal var startTime: TimeInterval = 0
     
     internal var lastRefreshTime: TimeInterval = 0
     
@@ -24,7 +24,7 @@ class AbstractScene: SKScene {
     
     
     override func didMove(to view: SKView) {
-        let track = TrackNode(type: .double)
+        let track = TrackNode(type: .single)
         self.trackNode = track
         self.addChild(trackNode)
         
@@ -45,6 +45,9 @@ class AbstractScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        if self.startTime == 0 {
+            self.startTime = currentTime - 0.1 // Prevent division by zero
+        }
         self.lastRefreshTime = currentTime
         self.cleanTrack(currentTime)
         self.placeInBoundTrains()
@@ -97,7 +100,7 @@ class AbstractScene: SKScene {
             self.trainsOnTrack.remove(at: i)
         }
         self.totalCount += trainsToRemove.count * 500
-        let rate: Int = Int(Double(self.totalCount) / (currentTime - self.lastCountTime))
+        let rate: Int = Int(Double(self.totalCount) / (currentTime - self.startTime))
         self.countLabelNode.text = "\(rate) people / hour"
         self.remainLabelNode.text = "\(self.trainsToPlace.count) cars not shown"
     }

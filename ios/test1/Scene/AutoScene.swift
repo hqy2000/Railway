@@ -11,7 +11,6 @@ import GameplayKit
 
 class AutoScene: AbstractScene {
     private var blockCount: Int = 15
-
     private var inBoundBlocks: [BlockNode] = []
     private var outBoundBlocks: [BlockNode] = []
     private let trainCount: Int = 5
@@ -22,6 +21,7 @@ class AutoScene: AbstractScene {
     }
     
     override func didMove(to view: SKView) {
+        self.trackNode = TrackNode(type: .double)
         super.didMove(to: view)
         let length = self.trackNode.range * 2
         for i in 1...self.blockCount {
@@ -54,7 +54,7 @@ class AutoScene: AbstractScene {
     }
     
     private func refreshBlocks(_ currentTime: TimeInterval, forDirection direction: TrackNode.Direction) {
-        if self.lastCountTime == 0 || currentTime - self.lastCountTime == 0 {
+        if self.lastRefreshTime == 0.0 || currentTime - self.lastRefreshTime == 0.0 {
             return
         }
         var status: [Int] = []

@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "AutoScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                view.preferredFramesPerSecond = 120
+                view.preferredFramesPerSecond = 30
                 // Present the scene
                 view.presentScene(scene)
             }

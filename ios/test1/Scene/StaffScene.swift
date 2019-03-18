@@ -9,19 +9,47 @@
 import Foundation
 import SpriteKit
 
-class StaffScene: SKScene {
+class StaffScene: AbstractScene {
+
     override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        // self.remainLabelNode.isHidden = true
         /*
          let followPathNew = SKAction.run {
          
          }
-         let followPath = SKAction.follow(line.getPath(for: train.direction), asOffset: false, orientToPath: true, speed: 40)
+         
+         */
+        self.placeTrain(forDirection: .inBound)
+    }
+    
+    override func placeInBoundTrains() {
+        self.placeTrains(for: .inBound)
+    }
+    
+    override func placeOutBoundTrains() {
+        self.placeTrains(for: .outBound)
+    }
+    
+    private func placeTrains(for direction: TrackNode.Direction) {
+        let trains = self.trainsToPlace.filter { (train) -> Bool in
+            return train.direction == direction
+        }
+        if trains.count == 0 {
+            return
+        }
+        let train = trains[0]
+        let followPath = SKAction.follow(self.trackNode.getPath(for: train.direction), asOffset: false, orientToPath: true, speed: 40)
+        /*
          followPath.timingFunction = { t in
          return powf(t, 3)
          }
-         train.run(SKAction.repeatForever(followPath)) {
-         
-         }
          */
+        if direction == .inBound {
+            train.run(followPath)
+        } else {
+            train.run(followPath.reversed())
+        }
+        self.trainsToPlace.remove(at: 0)
     }
 }
