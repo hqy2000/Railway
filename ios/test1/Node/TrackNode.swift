@@ -11,7 +11,7 @@ import SpriteKit
 
 class TrackNode: SKShapeNode {
     private let type: TrackType
-    public let range: Int = 60
+    public let range: Int = 100
     
     init(type: TrackType) {
         self.type = type

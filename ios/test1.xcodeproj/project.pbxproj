@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7825E39D223E4AC20064CB52 /* StaffScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825E39C223E4AC20064CB52 /* StaffScene.swift */; };
+		7825E39F223E4DA30064CB52 /* AbstractScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825E39E223E4DA30064CB52 /* AbstractScene.swift */; };
 		785DBAC8223CC56A00E435D5 /* TrackNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785DBAC7223CC56A00E435D5 /* TrackNode.swift */; };
 		785DBACA223CCDF200E435D5 /* StationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785DBAC9223CCDF200E435D5 /* StationNode.swift */; };
 		785DBACC223CD1F200E435D5 /* BlockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785DBACB223CD1F200E435D5 /* BlockNode.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		7825E39C223E4AC20064CB52 /* StaffScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffScene.swift; sourceTree = "<group>"; };
+		7825E39E223E4DA30064CB52 /* AbstractScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractScene.swift; sourceTree = "<group>"; };
 		785DBAC7223CC56A00E435D5 /* TrackNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackNode.swift; sourceTree = "<group>"; };
 		785DBAC9223CCDF200E435D5 /* StationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationNode.swift; sourceTree = "<group>"; };
 		785DBACB223CD1F200E435D5 /* BlockNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockNode.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				785DBAD5223D335800E435D5 /* AutoScene.sks */,
 				78E62B9F223CA89D00E5D352 /* AutoScene.swift */,
 				7825E39C223E4AC20064CB52 /* StaffScene.swift */,
+				7825E39E223E4DA30064CB52 /* AbstractScene.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				78E62BA2223CA89D00E5D352 /* GameViewController.swift in Sources */,
 				785DBACC223CD1F200E435D5 /* BlockNode.swift in Sources */,
 				78E62B9A223CA89D00E5D352 /* AppDelegate.swift in Sources */,
+				7825E39F223E4DA30064CB52 /* AbstractScene.swift in Sources */,
 				785DBAC8223CC56A00E435D5 /* TrackNode.swift in Sources */,
 				7825E39D223E4AC20064CB52 /* StaffScene.swift in Sources */,
 			);

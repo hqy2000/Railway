@@ -10,5 +10,18 @@ import Foundation
 import SpriteKit
 
 class StaffScene: SKScene {
-    
+    override func didMove(to view: SKView) {
+        /*
+         let followPathNew = SKAction.run {
+         
+         }
+         let followPath = SKAction.follow(line.getPath(for: train.direction), asOffset: false, orientToPath: true, speed: 40)
+         followPath.timingFunction = { t in
+         return powf(t, 3)
+         }
+         train.run(SKAction.repeatForever(followPath)) {
+         
+         }
+         */
+    }
 }

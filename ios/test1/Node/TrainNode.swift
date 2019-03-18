@@ -11,36 +11,15 @@ import SpriteKit
 
 class TrainNode: SKShapeNode {
     public let direction: TrackNode.Direction
-    let fast = 20.0
-    let slow = 5.0
-    public var trainSpeed: Double = 0.0 {
-        didSet {
-            switch self.status {
-            case .acceleratingToSlowMode:
-                if self.trainSpeed > self.slow {
-                    self.status = .maintainingSlowMode
-                    self.trainSpeed = self.slow
-                }
-            case .acceleratingToFastMode:
-                if self.trainSpeed > self.fast {
-                    self.status = .maintainingFastMode
-                    self.trainSpeed = self.fast
-                }
-            case .deceleratingToSlowMode:
-                if self.trainSpeed < self.slow {
-                    self.status = .maintainingSlowMode
-                    self.trainSpeed = self.slow
-                }
-            case .deceleratingToStop:
-                if self.trainSpeed < 0.0 {
-                    self.status = .stopped
-                    self.trainSpeed = 0
-                }
-            default:
-                break
-            }
+    public var maximumSlowSpeed: Double {
+        get {
+            return self.maximumSpeed / 5
         }
     }
+    public let maximumSpeed: Double = 100.0
+    public let maximumAcceleration: Double = 10
+    
+    public var velocity: Double = 0.0 
     public var status: Status = .stopped
     
     init(direction: TrackNode.Direction = .inBound) {
@@ -72,12 +51,8 @@ class TrainNode: SKShapeNode {
     }
     
     enum Status {
-        case acceleratingToSlowMode
-        case acceleratingToFastMode
-        case deceleratingToSlowMode
-        case deceleratingToStop
-        case maintainingSlowMode
-        case maintainingFastMode
+        case fast
+        case slow
         case stopped
     }
 }
