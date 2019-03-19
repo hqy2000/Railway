@@ -15,21 +15,29 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "AutoScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                view.preferredFramesPerSecond = 30
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-        }
+        let view = SKView(frame: self.view.frame)
+        self.view.addSubview(view)
+        
+        let topConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
+        let botConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0)
+        let leftConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0)
+        let rigthConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: 0)
+        
+        NSLayoutConstraint.activate([topConst,botConst,leftConst,rigthConst])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        let scene = AutoScene(size: self.view.frame.size, trains: [
+            TrainNode(direction: .inBound, acceleration: 10, maximumSpeed: 20),
+            TrainNode(direction: .outBound, acceleration: 10, maximumSpeed: 20)
+            ], blockCount: 15)
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        scene.scaleMode = .aspectFill
+        view.preferredFramesPerSecond = 30
+        view.presentScene(scene)
+        
+        view.ignoresSiblingOrder = true
+        view.showsFPS = true
+        view.showsNodeCount = true
+        
     }
 
     override var shouldAutorotate: Bool {

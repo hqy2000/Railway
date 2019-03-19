@@ -98,8 +98,8 @@
 		785DBAC6223CC53B00E435D5 /* Node */ = {
 			isa = PBXGroup;
 			children = (
-				785DBAC7223CC56A00E435D5 /* TrackNode.swift */,
 				785DBAC9223CCDF200E435D5 /* StationNode.swift */,
+				785DBAC7223CC56A00E435D5 /* TrackNode.swift */,
 				785DBACB223CD1F200E435D5 /* BlockNode.swift */,
 				785DBACD223CD26100E435D5 /* TrainNode.swift */,
 			);

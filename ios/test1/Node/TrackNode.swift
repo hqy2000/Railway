@@ -43,12 +43,12 @@ class TrackNode: SKShapeNode {
     }
     
     private func addSingleTrack(to path: CGMutablePath, direction: Direction) {
-        path.move(to: CGPoint(x: -120, y: 15 * direction.rawValue))
+        path.move(to: CGPoint(x: -125, y: 15 * direction.rawValue))
         path.addLine(to: CGPoint(x: -80, y: 15 * direction.rawValue))
         path.addCurve(to: CGPoint(x: -60, y: 0), control1: CGPoint(x: -70, y: 15 * direction.rawValue), control2: CGPoint(x: -70, y: 0))
         path.addLine(to: CGPoint(x: 60, y: 0))
         path.addCurve(to: CGPoint(x: 80, y: 15 * direction.rawValue), control1: CGPoint(x: 70, y: 0), control2: CGPoint(x: 70, y: 15 * direction.rawValue))
-        path.addLine(to: CGPoint(x: 120, y: 15 * direction.rawValue))
+        path.addLine(to: CGPoint(x: 125, y: 15 * direction.rawValue))
     }
     
     private func addDoubleTrack(to path: CGMutablePath, direction: Direction) {

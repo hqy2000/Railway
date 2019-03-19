@@ -16,24 +16,18 @@ class TrainNode: SKShapeNode {
             return self.maximumSpeed / 5
         }
     }
-    public let maximumSpeed: Double = 100.0
-    public let maximumAcceleration: Double = 10
+    public let maximumSpeed: Double
+    public let acceleration: Double
     
-    public var velocity: Double = 0.0 
+    public var velocity: Double = 0.0
     public var status: Status = .stopped
     
-    init(direction: TrackNode.Direction = .inBound) {
+    init(direction: TrackNode.Direction = .inBound, acceleration: Double = 0.0, maximumSpeed: Double = 20.0) {
         self.direction = direction
+        self.acceleration = acceleration
+        self.maximumSpeed = maximumSpeed
         super.init()
         let line = CGMutablePath()
-        /*
-        line.addArc(center: CGPoint(x: -2.7, y: 0), radius: 2.5, startAngle: 2 * CGFloat.pi, endAngle: 0 * CGFloat.pi, clockwise: true)
-        line.addArc(center: CGPoint(x: 2.7, y: 0), radius: 2.5, startAngle: 2 * CGFloat.pi, endAngle: 0 * CGFloat.pi, clockwise: true)
-        line.move(to: CGPoint(x: -6, y: 2.5))
-        line.addLine(to: CGPoint(x: 6, y: 2.5))
-        line.addLine(to: CGPoint(x: 6, y: 8))
-        line.addLine(to: CGPoint(x: -6, y: 8))
-        */
         line.move(to: CGPoint(x: -2.5, y: 0.0))
         line.addLine(to: CGPoint(x: 2.5, y: 0.0))
         line.addLine(to: CGPoint(x: 2.5, y: 10.0))
@@ -43,7 +37,6 @@ class TrainNode: SKShapeNode {
         self.fillColor = .gray
         self.lineWidth = 0
         self.path = line
-        //self.zRotation = .pi * 0.5
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,5 +47,11 @@ class TrainNode: SKShapeNode {
         case fast
         case slow
         case stopped
+    }
+    
+    public var reversed: TrainNode {
+        get {
+            return TrainNode(direction: self.direction, acceleration: self.acceleration, maximumSpeed: self.maximumSpeed)
+        }
     }
 }

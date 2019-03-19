@@ -10,24 +10,24 @@ import Foundation
 import SpriteKit
 
 class StaffScene: AbstractScene {
-
+    
+    init(size: CGSize, train: TrainNode) {
+        super.init(size: size)
+        self.addTrainToPlace(train)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didMove(to view: SKView) {
+        self.trackNode = TrackNode(type: .single)
         super.didMove(to: view)
-        // self.remainLabelNode.isHidden = true
-        /*
-         let followPathNew = SKAction.run {
-         
-         }
-         
-         */
-        self.placeTrain(forDirection: .inBound)
     }
     
-    override func placeInBoundTrains() {
+    override func update(_ currentTime: TimeInterval) {
+        super.update(currentTime)
         self.placeTrains(for: .inBound)
-    }
-    
-    override func placeOutBoundTrains() {
         self.placeTrains(for: .outBound)
     }
     
@@ -39,6 +39,8 @@ class StaffScene: AbstractScene {
             return
         }
         let train = trains[0]
+        self.addChild(train)
+        self.trainsOnTrack.append(train)
         let followPath = SKAction.follow(self.trackNode.getPath(for: train.direction), asOffset: false, orientToPath: true, speed: 40)
         /*
          followPath.timingFunction = { t in

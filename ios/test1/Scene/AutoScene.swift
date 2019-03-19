@@ -13,11 +13,22 @@ class AutoScene: AbstractScene {
     private var blockCount: Int = 15
     private var inBoundBlocks: [BlockNode] = []
     private var outBoundBlocks: [BlockNode] = []
-    private let trainCount: Int = 5
     private var blockLength: Int {
         get {
             return self.trackNode.range * 2 / self.blockCount
         }
+    }
+    
+    init(size: CGSize, trains: [TrainNode], blockCount: Int) {
+        super.init(size: size)
+        for train in trains {
+            self.addTrainToPlace(train)
+        }
+        self.blockCount = blockCount
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func didMove(to view: SKView) {
@@ -38,11 +49,6 @@ class AutoScene: AbstractScene {
         }
         
         self.outBoundBlocks.reverse()
-        
-        for _ in 0..<self.trainCount {
-            self.placeTrain(forDirection: .inBound)
-            self.placeTrain(forDirection: .outBound)
-        }
     }
     
 
@@ -51,6 +57,36 @@ class AutoScene: AbstractScene {
         self.refreshBlocks(currentTime, forDirection: .inBound)
         self.refreshBlocks(currentTime, forDirection: .outBound)
         super.update(currentTime)
+        self.placeInBoundTrains()
+        self.placeOutBoundTrains()
+    }
+    
+    private func placeInBoundTrains() {
+        let inRegioinTrains = self.trainsOnTrack.filter({ (train) -> Bool in
+            return Int(train.position.x) < -self.trackNode.range
+        })
+        let trainsToPlace = self.trainsToPlace.filter { (train) -> Bool in
+            return train.direction == .inBound
+        }
+        if inRegioinTrains.count == 0 && trainsToPlace.count > 0{
+            self.addChild(trainsToPlace[0])
+            self.trainsOnTrack.append(trainsToPlace[0])
+            self.trainsToPlace.remove(at: self.trainsToPlace.firstIndex(of: trainsToPlace[0])!)
+        }
+    }
+    
+    private func placeOutBoundTrains() {
+        let inRegioinTrains = self.trainsOnTrack.filter({ (train) -> Bool in
+            return Int(train.position.x) > self.trackNode.range
+        })
+        let trainsToPlace = self.trainsToPlace.filter { (train) -> Bool in
+            return train.direction == .outBound
+        }
+        if inRegioinTrains.count == 0 && trainsToPlace.count > 0{
+            self.addChild(trainsToPlace[0])
+            self.trainsOnTrack.append(trainsToPlace[0])
+            self.trainsToPlace.remove(at: self.trainsToPlace.firstIndex(of: trainsToPlace[0])!)
+        }
     }
     
     private func refreshBlocks(_ currentTime: TimeInterval, forDirection direction: TrackNode.Direction) {
@@ -65,7 +101,7 @@ class AutoScene: AbstractScene {
             return train.direction == direction
         }
         for (index, train) in trains.enumerated() {
-            var position = Int(train.position.x) + self.trackNode.range + 10
+            var position = Int(train.position.x) + self.trackNode.range// + 10
             if direction == .outBound {
                 position = self.trackNode.range - Int(train.position.x)
             }
@@ -102,13 +138,13 @@ class AutoScene: AbstractScene {
             } else {
                 train.status = .fast
             }
-            
+            print(train.status)
             var multiplier = 1.0
             if train.direction == .outBound {
                 multiplier = -1.0
             }
 
-            if train.maximumAcceleration != 0 {
+            if train.acceleration != 0 {
                 switch train.status {
                 case .slow:
                     if train.velocity > train.maximumSlowSpeed {
@@ -135,7 +171,7 @@ class AutoScene: AbstractScene {
                 }
                 
                 
-                train.velocity += train.maximumAcceleration * timePassed * multiplier
+                train.velocity += train.acceleration * timePassed * multiplier
                 train.position.x = train.position.x + CGFloat(train.velocity * timePassed)
             } else {
                 switch train.status {
