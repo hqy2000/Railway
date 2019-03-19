@@ -11,7 +11,29 @@ import SpriteKit
 import GameplayKit
 
 public class GameViewController: UIViewController {
+    
+    let train: TrainNode?
+    let trains: [TrainNode]
+    let blockCount: Int
+    
+    public init(train: TrainNode) {
+        self.train = train
+        self.trains = []
+        self.blockCount = 0
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    public init(trains: [TrainNode], blockCount: Int) {
+        self.train = nil
+        self.trains = trains
+        self.blockCount = blockCount
+        super.init(nibName: nil, bundle: nil)
+    }
 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,21 +46,20 @@ public class GameViewController: UIViewController {
         NSLayoutConstraint.activate([topConst,botConst,leftConst,rigthConst])
         view.translatesAutoresizingMaskIntoConstraints = false // Make the view full-screen.
         
-        let scene = AutoScene(size: self.view.frame.size, trains: [
-            TrainNode(direction: .inBound, acceleration: 0, maximumSpeed: 100),
-            TrainNode(direction: .outBound, acceleration: 0, maximumSpeed: 100),
-            TrainNode(direction: .inBound, acceleration: 0, maximumSpeed: 100),
-            TrainNode(direction: .outBound, acceleration: 0, maximumSpeed: 100),
-            TrainNode(direction: .inBound, acceleration: 0, maximumSpeed: 100),
-            TrainNode(direction: .outBound, acceleration: 0, maximumSpeed: 100)
-            
-            ], blockCount: 15)
+        if let train = self.train {
+            let scene = StaffScene(size: self.view.frame.size, train: train)
+            scene.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Center the view.
+            scene.scaleMode = .aspectFill
+            view.presentScene(scene)
+        } else {
+            let scene = AutoScene(size: self.view.frame.size, trains: self.trains, blockCount: self.blockCount)
+            scene.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Center the view.
+            scene.scaleMode = .aspectFill
+            view.presentScene(scene)
+        }
         
-        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Center the view.
-        scene.scaleMode = .aspectFill
+        
         view.preferredFramesPerSecond = 30
-        view.presentScene(scene)
-        
         view.ignoresSiblingOrder = true
         view.showsFPS = true
         view.showsNodeCount = true

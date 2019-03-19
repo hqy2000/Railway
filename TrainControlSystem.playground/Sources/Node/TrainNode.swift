@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class TrainNode: SKShapeNode {
+public class TrainNode: SKShapeNode {
     public let direction: TrackNode.Direction
     public var maximumSlowSpeed: Double {
         get {
@@ -22,7 +22,7 @@ class TrainNode: SKShapeNode {
     public var velocity: Double = 0.0
     public var status: Status = .stopped
     
-    init(direction: TrackNode.Direction = .inBound, acceleration: Double = 0.0, maximumSpeed: Double = 20.0) {
+    public init(direction: TrackNode.Direction = .inBound, acceleration: Double = 0.0, maximumSpeed: Double = 20.0) {
         self.direction = direction
         self.acceleration = acceleration
         self.maximumSpeed = maximumSpeed
@@ -43,7 +43,7 @@ class TrainNode: SKShapeNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    enum Status {
+    public enum Status {
         case fast
         case slow
         case stopped

@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class TrackNode: SKShapeNode {
+public class TrackNode: SKShapeNode {
     private let type: Type
     public let range: Int = 100
     
@@ -68,12 +68,12 @@ class TrackNode: SKShapeNode {
         
     }
     
-    enum Direction: Int {
+    public enum Direction: Int {
         case inBound = 1
         case outBound = -1
     }
     
-    enum `Type` {
+    public enum `Type` {
         case single
         case double
     }

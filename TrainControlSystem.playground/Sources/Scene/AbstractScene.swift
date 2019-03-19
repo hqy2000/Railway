@@ -36,11 +36,11 @@ class AbstractScene: SKScene {
         self.addChild(station2)
         
         self.addChild(self.countLabelNode)
-        self.countLabelNode.position.x = 200
+        self.countLabelNode.position.x = 100
         self.countLabelNode.position.y = 200
         
         self.addChild(self.remainLabelNode)
-        self.remainLabelNode.position.x = 200
+        self.remainLabelNode.position.x = 100
         self.remainLabelNode.position.y = 150
     }
     
