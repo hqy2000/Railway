@@ -52,6 +52,9 @@ class AbstractScene: SKScene {
         self.cleanTrack(currentTime)
     }
     
+    /**
+     Check whether a train has reached the end of the track.
+     */
     internal func cleanTrack(_ currentTime: TimeInterval) {
         var trainsToRemove: [Int] = []
         for (index, train) in trainsOnTrack.enumerated() {
@@ -77,8 +80,6 @@ class AbstractScene: SKScene {
     
     /**
      Add a train to the list of the trains that will be later added on the track.
-     
-     Parameter forDirection: the direction of the train.
      */
     internal func addTrainToPlace(_ train: TrainNode) {
         if train.direction == .inBound {

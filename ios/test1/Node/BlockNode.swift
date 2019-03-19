@@ -23,7 +23,7 @@ class BlockNode: SKShapeNode {
         self.lineWidth = 0
     }
     
-    public func switchStatus(to status: BlockStatus) {
+    public func switchStatus(to status: Status) {
         switch status {
         case .fast:
             self.fillColor = .green
@@ -37,16 +37,11 @@ class BlockNode: SKShapeNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-enum BlockStatus: Int {
-    case stop = 3
-    case slow = 2
-    case fast = 1
+    
+    enum Status {
+        case stop
+        case slow
+        case fast
+    }
 }
 
-enum BlockMode {
-    case none
-    case staff
-    case auto
-    case cbtc
-}

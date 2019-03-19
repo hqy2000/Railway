@@ -31,6 +31,10 @@ class StaffScene: AbstractScene {
         self.placeTrains(for: .outBound)
     }
     
+    /**
+     Place a train on the track from the list.
+     - Parameter for: The direction of the track that you want to place the train.
+     */
     private func placeTrains(for direction: TrackNode.Direction) {
         let trains = self.trainsToPlace.filter { (train) -> Bool in
             return train.direction == direction
@@ -41,7 +45,7 @@ class StaffScene: AbstractScene {
         let train = trains[0]
         self.addChild(train)
         self.trainsOnTrack.append(train)
-        let followPath = SKAction.follow(self.trackNode.getPath(for: train.direction), asOffset: false, orientToPath: true, speed: 40)
+        let followPath = SKAction.follow(self.trackNode.getPath(for: train.direction), asOffset: false, orientToPath: true, speed: 40) // Let the train follow the track.
         /*
          followPath.timingFunction = { t in
          return powf(t, 3)
@@ -50,7 +54,7 @@ class StaffScene: AbstractScene {
         if direction == .inBound {
             train.run(followPath)
         } else {
-            train.run(followPath.reversed())
+            train.run(followPath.reversed()) // Outbound trains move in a opposite direction.
         }
         self.trainsToPlace.remove(at: 0)
     }

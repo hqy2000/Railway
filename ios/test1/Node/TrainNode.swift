@@ -49,6 +49,11 @@ class TrainNode: SKShapeNode {
         case stopped
     }
     
+    /**
+     Get a TrainNode with same properties but opposite direction.
+     - Returns: TrainNode with opposite direction.
+     */
+    
     public var reversed: TrainNode {
         get {
             return TrainNode(direction: self.direction, acceleration: self.acceleration, maximumSpeed: self.maximumSpeed)

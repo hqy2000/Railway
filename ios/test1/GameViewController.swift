@@ -17,19 +17,24 @@ class GameViewController: UIViewController {
         
         let view = SKView(frame: self.view.frame)
         self.view.addSubview(view)
-        
         let topConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
         let botConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0)
         let leftConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0)
         let rigthConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: 0)
-        
         NSLayoutConstraint.activate([topConst,botConst,leftConst,rigthConst])
-        view.translatesAutoresizingMaskIntoConstraints = false
+        view.translatesAutoresizingMaskIntoConstraints = false // Make the view full-screen.
+        
         let scene = AutoScene(size: self.view.frame.size, trains: [
-            TrainNode(direction: .inBound, acceleration: 10, maximumSpeed: 20),
-            TrainNode(direction: .outBound, acceleration: 10, maximumSpeed: 20)
+            TrainNode(direction: .inBound, acceleration: 0, maximumSpeed: 100),
+            TrainNode(direction: .outBound, acceleration: 0, maximumSpeed: 100),
+            TrainNode(direction: .inBound, acceleration: 0, maximumSpeed: 100),
+            TrainNode(direction: .outBound, acceleration: 0, maximumSpeed: 100),
+            TrainNode(direction: .inBound, acceleration: 0, maximumSpeed: 100),
+            TrainNode(direction: .outBound, acceleration: 0, maximumSpeed: 100)
+            
             ], blockCount: 15)
-        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Center the view.
         scene.scaleMode = .aspectFill
         view.preferredFramesPerSecond = 30
         view.presentScene(scene)

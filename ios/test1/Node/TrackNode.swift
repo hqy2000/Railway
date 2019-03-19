@@ -10,10 +10,10 @@ import Foundation
 import SpriteKit
 
 class TrackNode: SKShapeNode {
-    private let type: TrackType
+    private let type: Type
     public let range: Int = 100
     
-    init(type: TrackType) {
+    init(type: Type) {
         self.type = type
         super.init()
         let pathToDraw = CGMutablePath()
@@ -31,6 +31,10 @@ class TrackNode: SKShapeNode {
         
     }
     
+    /**
+     Get a path for a track.
+     - Returns: The CGMutablePath of the track.
+     */
     public func getPath(for direction: Direction) -> CGMutablePath {
         let path = CGMutablePath()
         switch type {
@@ -68,9 +72,9 @@ class TrackNode: SKShapeNode {
         case inBound = 1
         case outBound = -1
     }
-}
-
-enum TrackType {
-    case single
-    case double
+    
+    enum `Type` {
+        case single
+        case double
+    }
 }
