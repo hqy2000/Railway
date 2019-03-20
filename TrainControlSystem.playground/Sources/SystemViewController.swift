@@ -44,7 +44,6 @@ public class SystemViewController: UIViewController {
         
         let scene = self.getScene()
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Center the view.
-        scene.position.y = -100
         scene.scaleMode = .aspectFill
         view.presentScene(scene)
         scene.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)

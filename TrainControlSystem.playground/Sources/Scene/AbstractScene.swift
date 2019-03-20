@@ -25,15 +25,16 @@ class AbstractScene: SKScene {
     
     override func didMove(to view: SKView) {
         let backgroundNode = SKSpriteNode(imageNamed: "background.jpg")
-        backgroundNode.anchorPoint = CGPoint(x: 0.48, y: 0.5)
+        backgroundNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         backgroundNode.size.width = self.size.width
         backgroundNode.size.height = self.size.height
         backgroundNode.zPosition = -100
         
-        let b = SKSpriteNode(color: UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5), size: self.size)
-        b.zPosition = -99
+        let backgroundMaskNode = SKSpriteNode(color: UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5), size: self.size)
+        backgroundMaskNode.zPosition = -99
+        
         self.addChild(backgroundNode)
-        self.addChild(b)
+        self.addChild(backgroundMaskNode)
         
         // let track = TrackNode(type: .single)
         // self.trackNode = track
@@ -48,12 +49,12 @@ class AbstractScene: SKScene {
         
         let rectangleNode = SKShapeNode(rectOf: CGSize(width: 100, height: 40), cornerRadius: 5)
         rectangleNode.position.x = 0
-        rectangleNode.position.y = 72
+        rectangleNode.position.y = -55
         self.addChild(rectangleNode)
         
         self.addChild(self.countLabelNode)
         self.countLabelNode.horizontalAlignmentMode = .center
-        self.countLabelNode.position.y = 60
+        self.countLabelNode.position.y = -66
         self.countLabelNode.position.x = 0
         // self.addChild(self.remainLabelNode)
         // self.remainLabelNode.position.x = 100
