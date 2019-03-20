@@ -24,6 +24,17 @@ class AbstractScene: SKScene {
     
     
     override func didMove(to view: SKView) {
+        let backgroundNode = SKSpriteNode(imageNamed: "background.jpg")
+        backgroundNode.anchorPoint = CGPoint(x: 0.48, y: 0.5)
+        backgroundNode.size.width = self.size.width
+        backgroundNode.size.height = self.size.height
+        backgroundNode.zPosition = -100
+        
+        let b = SKSpriteNode(color: UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5), size: self.size)
+        b.zPosition = -99
+        self.addChild(backgroundNode)
+        self.addChild(b)
+        
         // let track = TrackNode(type: .single)
         // self.trackNode = track
         self.addChild(self.trackNode)
@@ -44,7 +55,6 @@ class AbstractScene: SKScene {
         self.countLabelNode.horizontalAlignmentMode = .center
         self.countLabelNode.position.y = 60
         self.countLabelNode.position.x = 0
-        
         // self.addChild(self.remainLabelNode)
         // self.remainLabelNode.position.x = 100
         // self.remainLabelNode.position.y = 150

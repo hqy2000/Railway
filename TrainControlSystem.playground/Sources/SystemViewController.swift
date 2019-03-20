@@ -36,49 +36,43 @@ public class SystemViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
         let view = SKView(frame: self.view.frame)
+        view.allowsTransparency = true
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
         self.view.addSubview(view)
+        self.constrain(view)
+        
+        let scene = self.getScene()
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Center the view.
+        scene.position.y = -100
+        scene.scaleMode = .aspectFill
+        view.presentScene(scene)
+        scene.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
+
+        view.preferredFramesPerSecond = 30
+        view.ignoresSiblingOrder = true
+        view.showsFPS = true
+        view.showsNodeCount = true
+    }
+    
+    
+    private func constrain(_ view: UIView) {
         let topConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
         let botConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0)
         let leftConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0)
         let rigthConst = NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: 0)
         NSLayoutConstraint.activate([topConst,botConst,leftConst,rigthConst])
         view.translatesAutoresizingMaskIntoConstraints = false // Make the view full-screen.
-        
+    }
+    /**
+     Get the correct scene.
+     */
+    private func getScene() -> AbstractScene {
+        let size = CGSize(width: 400, height: 600)
         if let train = self.train {
-            let scene = StaffScene(size: CGSize(width: 300, height: 200), train: train)3
-            scene.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Center the view.
-            scene.scaleMode = .aspectFit
-            view.presentScene(scene)
+            return StaffScene(size: size, train: train)
         } else {
-            let scene = AutoScene(size: CGSize(width: 300, height: 200), trains: self.trains, blockCount: self.blockCount)
-            scene.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Center the view.
-            scene.scaleMode = .aspectFill
-            view.presentScene(scene)
+            return AutoScene(size: size, trains: self.trains, blockCount: self.blockCount)
         }
-        
-        
-        view.preferredFramesPerSecond = 30
-        view.ignoresSiblingOrder = true
-        view.showsFPS = true
-        view.showsNodeCount = true
-        
-    }
-
-    override public var shouldAutorotate: Bool {
-        return true
-    }
-
-    override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
-
-    override public var prefersStatusBarHidden: Bool {
-        return true
     }
 }
