@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-public class GameViewController: UIViewController {
+public class SystemViewController: UIViewController {
     
     let train: TrainNode?
     let trains: [TrainNode]
@@ -47,12 +47,12 @@ public class GameViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false // Make the view full-screen.
         
         if let train = self.train {
-            let scene = StaffScene(size: self.view.frame.size, train: train)
+            let scene = StaffScene(size: CGSize(width: 300, height: 200), train: train)3
             scene.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Center the view.
-            scene.scaleMode = .aspectFill
+            scene.scaleMode = .aspectFit
             view.presentScene(scene)
         } else {
-            let scene = AutoScene(size: self.view.frame.size, trains: self.trains, blockCount: self.blockCount)
+            let scene = AutoScene(size: CGSize(width: 300, height: 200), trains: self.trains, blockCount: self.blockCount)
             scene.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Center the view.
             scene.scaleMode = .aspectFill
             view.presentScene(scene)

@@ -56,7 +56,13 @@ public class TrainNode: SKShapeNode {
     
     public var reversed: TrainNode {
         get {
-            return TrainNode(direction: self.direction, acceleration: self.acceleration, maximumSpeed: self.maximumSpeed)
+            switch self.direction {
+            case .inBound:
+                return TrainNode(direction: .outBound, acceleration: self.acceleration, maximumSpeed: self.maximumSpeed)
+            case .outBound:
+                return TrainNode(direction: .inBound, acceleration: self.acceleration, maximumSpeed: self.maximumSpeed)
+            }
+            
         }
     }
 }

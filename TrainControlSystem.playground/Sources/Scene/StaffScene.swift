@@ -54,8 +54,9 @@ class StaffScene: AbstractScene {
         if direction == .inBound {
             train.run(followPath)
         } else {
+            
             train.run(followPath.reversed()) // Outbound trains move in a opposite direction.
         }
-        self.trainsToPlace.remove(at: 0)
+        self.trainsToPlace.remove(at: self.trainsToPlace.firstIndex(of: train)!)
     }
 }

@@ -18,7 +18,7 @@ class AbstractScene: SKScene {
     
     internal var lastRefreshTime: TimeInterval = 0
     
-    internal let countLabelNode = SKLabelNode(text: "160 people / hour")
+    internal let countLabelNode = SKLabelNode(text: "0000")
     internal let remainLabelNode = SKLabelNode(text: "5 cars remain")
     internal var trackNode: TrackNode = TrackNode(type: .double)
     
@@ -35,13 +35,19 @@ class AbstractScene: SKScene {
         self.addChild(station1)
         self.addChild(station2)
         
-        self.addChild(self.countLabelNode)
-        self.countLabelNode.position.x = 100
-        self.countLabelNode.position.y = 200
+        let rectangleNode = SKShapeNode(rectOf: CGSize(width: 100, height: 40), cornerRadius: 5)
+        rectangleNode.position.x = 0
+        rectangleNode.position.y = 72
+        self.addChild(rectangleNode)
         
-        self.addChild(self.remainLabelNode)
-        self.remainLabelNode.position.x = 100
-        self.remainLabelNode.position.y = 150
+        self.addChild(self.countLabelNode)
+        self.countLabelNode.horizontalAlignmentMode = .center
+        self.countLabelNode.position.y = 60
+        self.countLabelNode.position.x = 0
+        
+        // self.addChild(self.remainLabelNode)
+        // self.remainLabelNode.position.x = 100
+        // self.remainLabelNode.position.y = 150
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -74,8 +80,15 @@ class AbstractScene: SKScene {
         }
         self.totalCount += trainsToRemove.count * 500
         let rate: Int = Int(Double(self.totalCount) / (currentTime - self.startTime))
-        self.countLabelNode.text = "\(rate) people / hour"
-        self.remainLabelNode.text = "\(self.trainsToPlace.count) cars not shown"
+        self.countLabelNode.text = "\(rate)"
+        if self.trainsToPlace.count > 2 {
+            self.countLabelNode.fontColor = UIColor.red
+        } else if self.trainsToPlace.count > 0 {
+            self.countLabelNode.fontColor = UIColor.yellow
+        } else {
+            self.countLabelNode.fontColor = UIColor.green
+        }
+        // self.remainLabelNode.text = "\(self.trainsToPlace.count) cars not shown"
     }
     
     /**
