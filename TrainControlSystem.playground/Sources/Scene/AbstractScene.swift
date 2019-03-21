@@ -52,6 +52,7 @@ class AbstractScene: SKScene {
         rectangleNode.position.y = -55
         self.addChild(rectangleNode)
         
+        // self.countLabelNode.fontName = self.countLabelNode.fontName! + "-Bold"
         self.addChild(self.countLabelNode)
         self.countLabelNode.horizontalAlignmentMode = .center
         self.countLabelNode.position.y = -66
