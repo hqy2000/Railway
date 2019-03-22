@@ -50,12 +50,12 @@ class AutoScene: AbstractScene {
         for i in 1...self.blockCount { // Add blocks to the track
             let end = -self.trackNode.range + length / blockCount * i
             let block = BlockNode(startsAt: CGFloat(end - length / blockCount), endsAt: CGFloat(end))
-            block.position.y = 15
+            block.position.y = 15 + self.verticalOffset
             self.addChild(block)
             self.inBoundBlocks.append(block)
             
             let block1 = BlockNode(startsAt: CGFloat(end - length / blockCount), endsAt: CGFloat(end))
-            block1.position.y = -15
+            block1.position.y = -15 + self.verticalOffset
             self.addChild(block1)
             self.outBoundBlocks.append(block1)
         }
@@ -77,16 +77,21 @@ class AutoScene: AbstractScene {
      Place a train on the inbound track.
      */
     private func placeInBoundTrains() {
-        let inRegioinTrains = self.trainsOnTrack.filter({ (train) -> Bool in // Check whether there is a train on the start of the track to prevent colision.
+        let inRegionTrains = self.trainsOnTrack.filter({ (train) -> Bool in // Check whether there is a train on the start of the track to prevent colision.
             return Int(train.position.x) < -self.trackNode.range
         })
         let trainsToPlace = self.trainsToPlace.filter { (train) -> Bool in
             return train.direction == .inBound
         }
-        if inRegioinTrains.count == 0 && trainsToPlace.count > 0{
-            self.addChild(trainsToPlace[0])
-            self.trainsOnTrack.append(trainsToPlace[0])
-            self.trainsToPlace.remove(at: self.trainsToPlace.firstIndex(of: trainsToPlace[0])!)
+        
+        if inRegionTrains.count == 0 && trainsToPlace.count > 0 {
+            let train = trainsToPlace[0]
+            train.position.x = -120
+            train.position.y = 15 + self.verticalOffset
+            train.zRotation = 1.5 * .pi
+            self.addChild(train)
+            self.trainsOnTrack.append(train)
+            self.trainsToPlace.remove(at: self.trainsToPlace.firstIndex(of: train)!)
         }
     }
     
@@ -94,16 +99,20 @@ class AutoScene: AbstractScene {
      Place a train on the outbound track.
      */
     private func placeOutBoundTrains() {
-        let inRegioinTrains = self.trainsOnTrack.filter({ (train) -> Bool in // Same as above.
+        let inRegionTrains = self.trainsOnTrack.filter({ (train) -> Bool in // Same as above.
             return Int(train.position.x) > self.trackNode.range
         })
         let trainsToPlace = self.trainsToPlace.filter { (train) -> Bool in
             return train.direction == .outBound
         }
-        if inRegioinTrains.count == 0 && trainsToPlace.count > 0{
-            self.addChild(trainsToPlace[0])
-            self.trainsOnTrack.append(trainsToPlace[0])
-            self.trainsToPlace.remove(at: self.trainsToPlace.firstIndex(of: trainsToPlace[0])!)
+        if inRegionTrains.count == 0 && trainsToPlace.count > 0 {
+            let train = trainsToPlace[0]
+            train.position.x = 120
+            train.position.y = -15 + self.verticalOffset
+            train.zRotation = 0.5 * .pi
+            self.addChild(train)
+            self.trainsOnTrack.append(train)
+            self.trainsToPlace.remove(at: self.trainsToPlace.firstIndex(of: train)!)
         }
     }
     

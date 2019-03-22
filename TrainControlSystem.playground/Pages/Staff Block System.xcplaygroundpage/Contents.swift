@@ -19,5 +19,7 @@ PlaygroundPage.current.liveView = SystemViewController()
 
 (PlaygroundPage.current.liveView as! SystemViewController).restartSimulation(train: train)
 //#-end-hidden-code
-
+DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+    (PlaygroundPage.current.liveView as! SystemViewController).restartSimulation(train: train)
+}
 //: [Next](@next)

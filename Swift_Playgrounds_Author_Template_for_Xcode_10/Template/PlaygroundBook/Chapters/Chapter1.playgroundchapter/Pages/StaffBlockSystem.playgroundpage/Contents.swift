@@ -12,10 +12,14 @@ typealias Train = TrainNode
  
  Try changing the parameters and see how it would affect the efficiency. The number of people transferred per hour is presented in the box below the track.
  */
-let maximumSpeed: Double = /*#-editable-code*/100/*#-end-editable-code*/
+let maximumSpeed: Double = /*#-editable-code*/10/*#-end-editable-code*/
 //#-hidden-code
-let train = Train(direction: .inBound, acceleration: 0, maximumSpeed: maximumSpeed)
-PlaygroundPage.current.liveView = SystemViewController(train: train)
+
+
+guard let remoteView = PlaygroundPage.current.liveView as? PlaygroundRemoteLiveViewProxy else {
+    fatalError("Always-on live view not configured in this page's LiveView.swift.")
+}
+remoteView.send(.dictionary(["train": .array([.integer(1), .floatingPoint(0), .floatingPoint(maximumSpeed)])]))
 //#-end-hidden-code
 
 //: [Next](@next)

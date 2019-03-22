@@ -104,14 +104,6 @@
 		5EF2F9A52054BBB200191409 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
 		5EF2F9AB2054BBF300191409 /* libBook_Sources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBook_Sources.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF2F9B62054E6F900191409 /* Chapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapters; sourceTree = "<group>"; };
-		783C9442224512AC00845794 /* SystemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemViewController.swift; sourceTree = "<group>"; };
-		783C9444224512AC00845794 /* AutoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoScene.swift; sourceTree = "<group>"; };
-		783C9445224512AC00845794 /* AbstractScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractScene.swift; sourceTree = "<group>"; };
-		783C9446224512AC00845794 /* StaffScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaffScene.swift; sourceTree = "<group>"; };
-		783C9448224512AC00845794 /* BlockNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockNode.swift; sourceTree = "<group>"; };
-		783C9449224512AC00845794 /* TrainNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainNode.swift; sourceTree = "<group>"; };
-		783C944A224512AC00845794 /* StationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationNode.swift; sourceTree = "<group>"; };
-		783C944B224512AC00845794 /* TrackNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackNode.swift; sourceTree = "<group>"; };
 		786E14552245153100B5F548 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../../TrainControlSystem.playground/Resources/background.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,9 +243,6 @@
 		5EF2F9A22054BB3E00191409 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				783C9447224512AC00845794 /* Node */,
-				783C9443224512AC00845794 /* Scene */,
-				783C9442224512AC00845794 /* SystemViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -264,27 +253,6 @@
 				5EF2F9A52054BBB200191409 /* Sources */,
 			);
 			name = "Supporting Content";
-			sourceTree = "<group>";
-		};
-		783C9443224512AC00845794 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				783C9444224512AC00845794 /* AutoScene.swift */,
-				783C9445224512AC00845794 /* AbstractScene.swift */,
-				783C9446224512AC00845794 /* StaffScene.swift */,
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
-		783C9447224512AC00845794 /* Node */ = {
-			isa = PBXGroup;
-			children = (
-				783C9448224512AC00845794 /* BlockNode.swift */,
-				783C9449224512AC00845794 /* TrainNode.swift */,
-				783C944A224512AC00845794 /* StationNode.swift */,
-				783C944B224512AC00845794 /* TrackNode.swift */,
-			);
-			path = Node;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

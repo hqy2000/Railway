@@ -43,18 +43,26 @@ class StaffScene: AbstractScene {
             return
         }
         let train = trains[0]
-        self.addChild(train)
-        self.trainsOnTrack.append(train)
-        let followPath = SKAction.follow(self.trackNode.getPath(for: train.direction), asOffset: false, orientToPath: true, speed: 40) // Let the train follow the track.
-        /*
-         followPath.timingFunction = { t in
-         return powf(t, 3)
-         }
-         */
+
+        let path = self.trackNode.getPath(for: train.direction)
+        let followPath = SKAction.follow(path, asOffset: true, orientToPath: true, speed: 40) // Let the train follow the track.
+        
+        train.speed = CGFloat(train.maximumSpeed / 10.0)
+        // Add acceleration to the trains.
+        train.position.y = self.verticalOffset
+        
         if direction == .inBound {
+            train.position.x = 0
+            train.zRotation = 1.5 * .pi
+            self.addChild(train)
+            self.trainsOnTrack.append(train)
             train.run(followPath)
         } else {
-            
+            train.position.x = 125
+            train.position.y -= 15
+            train.zRotation = 0.5 * .pi
+            self.addChild(train)
+            self.trainsOnTrack.append(train)
             train.run(followPath.reversed()) // Outbound trains move in a opposite direction.
         }
         self.trainsToPlace.remove(at: self.trainsToPlace.firstIndex(of: train)!)
