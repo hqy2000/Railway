@@ -17,6 +17,8 @@ let trains: [Train] = [
     //#-end-editable-code
 ]
 //#-hidden-code
-PlaygroundPage.current.liveView = SystemViewController(trains: trains, blockCount: blockCount)
+PlaygroundPage.current.liveView = SystemViewController()
+
+(PlaygroundPage.current.liveView as! SystemViewController).restartSimulation(trains: trains, blockCount: blockCount)
 //#-end-hidden-code
 //: [Next](@next)

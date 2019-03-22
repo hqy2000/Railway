@@ -15,7 +15,9 @@ typealias Train = TrainNode
 let maximumSpeed: Double = /*#-editable-code*/100/*#-end-editable-code*/
 //#-hidden-code
 let train = Train(direction: .inBound, acceleration: 0, maximumSpeed: maximumSpeed)
-PlaygroundPage.current.liveView = SystemViewController(train: train)
+PlaygroundPage.current.liveView = SystemViewController()
+
+(PlaygroundPage.current.liveView as! SystemViewController).restartSimulation(train: train)
 //#-end-hidden-code
 
 //: [Next](@next)
