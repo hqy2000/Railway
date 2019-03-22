@@ -12,7 +12,7 @@ typealias Train = TrainNode
  
  Try changing the parameters and see how it would affect the efficiency. The number of people transferred per hour is presented in the box below the track.
  */
-let maximumSpeed: Double = /*#-editable-code*/100/*#-end-editable-code*/
+let maximumSpeed: Double = /*#-editable-code*/100/*#-end-editable-code*/ // This is the maximum speed of the train.
 //#-hidden-code
 let train = Train(direction: .inBound, acceleration: 0, maximumSpeed: maximumSpeed)
 PlaygroundPage.current.liveView = SystemViewController()

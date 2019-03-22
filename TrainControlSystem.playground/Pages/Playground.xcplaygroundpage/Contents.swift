@@ -11,7 +11,8 @@ typealias Train = TrainNode
 let blockCount: Int = /*#-editable-code*/10/*#-end-editable-code*/ // This is the number of the signal blocks available on each track.
 let trains: [Train] = [
     //#-editable-code
-    //#-code-completion(identifier, show, Train(direction:acceleration:maximumSpeed))
+    //#-code-completion(everything, hide)
+    //#-code-completion(identifier, show, Train)
     Train(direction: .inBound, acceleration: 10.0, maximumSpeed: 100),
     Train(direction: .outBound, acceleration: 20.0, maximumSpeed: 50)
     //#-end-editable-code
@@ -21,4 +22,3 @@ PlaygroundPage.current.liveView = SystemViewController()
 
 (PlaygroundPage.current.liveView as! SystemViewController).restartSimulation(trains: trains, blockCount: blockCount)
 //#-end-hidden-code
-//: [Next](@next)

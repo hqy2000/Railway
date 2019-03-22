@@ -31,8 +31,8 @@ public class TrainNode: SKShapeNode {
         line.move(to: CGPoint(x: -2.5, y: 0.0))
         line.addLine(to: CGPoint(x: 2.5, y: 0.0))
         line.addLine(to: CGPoint(x: 2.5, y: 10.0))
-        line.addLine(to: CGPoint(x: -7.0, y: 3.0))
-        line.addLine(to: CGPoint(x: -2.5, y: 3.0))
+        line.addLine(to: CGPoint(x: -6.0, y: 2.0))
+        line.addLine(to: CGPoint(x: -2.5, y: 2.0))
         line.closeSubpath()
         self.fillColor = .gray
         self.lineWidth = 0

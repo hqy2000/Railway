@@ -9,8 +9,8 @@ typealias Train = TrainNode
  Now you have additional control of the train. You can change the maximum speed, and the acceleration and the deceleration of the train. Try changing the parameters and see how it would affect the efficiency.
  
  */
-let numberOfTrainsOnEachTrack: Int = /*#-editable-code*/4/*#-end-editable-code*/ // This is the number of the trains that will be placed on each track.
-let blockCount: Int = /*#-editable-code*/10/*#-end-editable-code*/ // This is the number of the signal blocks available on each track.
+let numberOfTrainsOnEachTrack: Int = /*#-editable-code*//*#-copy-destination("Automatic Block Signaling.playgroundpage", numberOfTrainsOnEachTrack)*/4/*#-end-copy-destination*//*#-end-editable-code*/ // This is the number of the trains that will be placed on each track.
+let blockCount: Int = /*#-editable-code*//*#-copy-destination("Automatic Block Signaling.playgroundpage", blockCount)*/10/*#-end-copy-destination*//*#-end-editable-code*/ // This is the number of the signal blocks available on each track.
 let maximumSpeed: Double = /*#-editable-code*/100/*#-end-editable-code*/ // This is the maximum speed of each train.
 let acceleration: Double = /*#-editable-code*/10/*#-end-editable-code*/ // This is the acceleration / deceleration of the train. If you want the train to speed up or slow down immediately, you can set this value to zero.
 //#-hidden-code

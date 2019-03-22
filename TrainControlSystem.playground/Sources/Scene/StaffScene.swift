@@ -50,18 +50,21 @@ class StaffScene: AbstractScene {
          followPath.timingFunction = { t in
          return powf(t, 3)
          }
-         */
-       
+         */ // Add acceleration to the trains.
         train.position.y = self.verticalOffset
         
         if direction == .inBound {
             train.position.x = 0
             train.zRotation = 1.5 * .pi
+            self.addChild(train)
+            self.trainsOnTrack.append(train)
             train.run(followPath)
         } else {
-            train.position.x = 120
+            train.position.x = 125
             train.position.y -= 15
             train.zRotation = 0.5 * .pi
+            self.addChild(train)
+            self.trainsOnTrack.append(train)
             train.run(followPath.reversed()) // Outbound trains move in a opposite direction.
         }
         self.trainsToPlace.remove(at: self.trainsToPlace.firstIndex(of: train)!)
