@@ -10,6 +10,7 @@ typealias Train = TrainNode
  */
 let blockCount: Int = /*#-editable-code*/10/*#-end-editable-code*/ // This is the number of the signal blocks available on each track.
 let trains: [Train] = [
+    // Try to add, remove or edit trains in this array.
     //#-editable-code
     //#-code-completion(everything, hide)
     //#-code-completion(identifier, show, Train)
