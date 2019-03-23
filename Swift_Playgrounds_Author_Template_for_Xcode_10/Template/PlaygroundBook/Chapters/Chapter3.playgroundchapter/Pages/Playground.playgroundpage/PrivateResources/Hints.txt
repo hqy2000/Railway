@@ -1,0 +1,5 @@
+You can add a train by initialing a new train.
+```
+Train(direction: <either .inBound or .outBound>, acceleration: <any positive number>, maximumSpeed: <any positive number>)
+```
+You need to add the train to the array 'trains.' Each train should be seperated by a comma.
