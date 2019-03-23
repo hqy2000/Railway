@@ -6,7 +6,10 @@ typealias Train = TrainNode
 /*:
  # Playground
  
- Now you can try to design your own trains to run. Try adding trains with different specifications to the array to see how it would change the effieciency. Note that the inbound direction is from left to right, while the outbound direction is from right to left.
+ Now you can try to design your own trains to run. Try adding trains with different specifications to the array and see how it would affect effieciency.
+ 
+ - Note:
+ The inbound direction is from left to right, while the outbound direction is from right to left.
  */
 let blockCount: Int = /*#-editable-code*/10/*#-end-editable-code*/ // This is the number of the signal blocks available on each track.
 let trains: [Train] = [

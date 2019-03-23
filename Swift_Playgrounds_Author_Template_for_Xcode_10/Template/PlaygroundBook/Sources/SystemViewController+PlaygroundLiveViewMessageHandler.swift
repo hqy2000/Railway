@@ -3,6 +3,7 @@ import PlaygroundSupport
 import UIKit
 
 extension SystemViewController: PlaygroundLiveViewMessageHandler {
+    // fatalErrors are used for debug.
     public func receive(_ message: PlaygroundValue) {
         guard case let .dictionary(message) = message else {
             return

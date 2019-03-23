@@ -4,6 +4,18 @@
 <dict>
 	<key>Terms</key>
 	<dict>
+		<key>staff block system</key>
+		<dict>
+			<key>Definition</key>
+			<string>Staff blcok system is a railroad communications system that the train is required to hold a symbol to run a block.</string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Introduction/Staff%20Block%20System</string>
+				<key>Title</key>
+				<string>Background</string>
+			</dict>
+		</dict>
 		<key>railway signalling</key>
 		<dict>
 			<key>Definition</key>
@@ -23,7 +35,7 @@
 			<key>FirstUse</key>
 			<dict>
 				<key>PageReference</key>
-				<string>Introduction/Background</string>
+				<string>Introduction/Staff%20Block%20System</string>
 				<key>Title</key>
 				<string>Background</string>
 			</dict>
@@ -35,24 +47,12 @@
 			<key>FirstUse</key>
 			<dict>
 				<key>PageReference</key>
-				<string>Introduction/Background</string>
+				<string>Introduction/Staff%20Block%20System</string>
 				<key>Title</key>
-				<string>Background</string>
+				<string>Staff Block System</string>
 			</dict>
 		</dict>
-		<key>automatic block signaling</key>
-		<dict>
-			<key>Definition</key>
-			<string>Railway signalling is a system used to direct railway traffic and keep trains clear of each other at all times. </string>
-			<key>FirstUse</key>
-			<dict>
-				<key>PageReference</key>
-				<string>Introduction/Background</string>
-				<key>Title</key>
-				<string>Background</string>
-			</dict>
-		</dict>
-		<key>railway signalling - 3</key>
+		<key>automatic block signalling</key>
 		<dict>
 			<key>Definition</key>
 			<string>Railway signalling is a system used to direct railway traffic and keep trains clear of each other at all times. </string>

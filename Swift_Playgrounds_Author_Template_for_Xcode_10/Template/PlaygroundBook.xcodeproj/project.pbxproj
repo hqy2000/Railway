@@ -17,6 +17,7 @@
 		5EF2F9B72054E6FB00191409 /* Chapters in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9B62054E6F900191409 /* Chapters */; };
 		786E14562245153100B5F548 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 786E14552245153100B5F548 /* background.jpg */; };
 		7881C10A2245C86D00CA2EC0 /* Sources in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 7881C1082245C85D00CA2EC0 /* Sources */; };
+		7881C10E2246192100CA2EC0 /* Cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 7881C10D2246192100CA2EC0 /* Cover.png */; };
 		78ED3C1F2245C171005D53BF /* Glossary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78ED3C1E2245C171005D53BF /* Glossary.plist */; };
 /* End PBXBuildFile section */
 
@@ -105,16 +106,8 @@
 		5EF2F9AB2054BBF300191409 /* libBook_Sources.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBook_Sources.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF2F9B62054E6F900191409 /* Chapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapters; sourceTree = "<group>"; };
 		786E14552245153100B5F548 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../../TrainControlSystem.playground/Resources/background.jpg; sourceTree = "<group>"; };
-		7881C0FE2245C73200CA2EC0 /* BlockNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockNode.swift; sourceTree = "<group>"; };
-		7881C0FF2245C73200CA2EC0 /* TrainNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainNode.swift; sourceTree = "<group>"; };
-		7881C1002245C73200CA2EC0 /* StationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationNode.swift; sourceTree = "<group>"; };
-		7881C1012245C73200CA2EC0 /* TrackNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackNode.swift; sourceTree = "<group>"; };
-		7881C1022245C73200CA2EC0 /* SystemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemViewController.swift; sourceTree = "<group>"; };
-		7881C1032245C73200CA2EC0 /* SystemViewController+ PlaygroundLiveViewMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SystemViewController+ PlaygroundLiveViewMessageHandler.swift"; sourceTree = "<group>"; };
-		7881C1052245C73200CA2EC0 /* AutoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoScene.swift; sourceTree = "<group>"; };
-		7881C1062245C73200CA2EC0 /* AbstractScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractScene.swift; sourceTree = "<group>"; };
-		7881C1072245C73200CA2EC0 /* StaffScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaffScene.swift; sourceTree = "<group>"; };
 		7881C1082245C85D00CA2EC0 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
+		7881C10D2246192100CA2EC0 /* Cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cover.png; sourceTree = "<group>"; };
 		78ED3C1E2245C171005D53BF /* Glossary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Glossary.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +239,7 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
+				7881C10D2246192100CA2EC0 /* Cover.png */,
 				78ED3C1E2245C171005D53BF /* Glossary.plist */,
 				786E14552245153100B5F548 /* background.jpg */,
 			);
@@ -255,10 +249,6 @@
 		5EF2F9A22054BB3E00191409 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				7881C0FD2245C73200CA2EC0 /* Node */,
-				7881C1042245C73200CA2EC0 /* Scene */,
-				7881C1022245C73200CA2EC0 /* SystemViewController.swift */,
-				7881C1032245C73200CA2EC0 /* SystemViewController+ PlaygroundLiveViewMessageHandler.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -269,27 +259,6 @@
 				7881C1082245C85D00CA2EC0 /* Sources */,
 			);
 			name = "Supporting Content";
-			sourceTree = "<group>";
-		};
-		7881C0FD2245C73200CA2EC0 /* Node */ = {
-			isa = PBXGroup;
-			children = (
-				7881C0FE2245C73200CA2EC0 /* BlockNode.swift */,
-				7881C0FF2245C73200CA2EC0 /* TrainNode.swift */,
-				7881C1002245C73200CA2EC0 /* StationNode.swift */,
-				7881C1012245C73200CA2EC0 /* TrackNode.swift */,
-			);
-			path = Node;
-			sourceTree = "<group>";
-		};
-		7881C1042245C73200CA2EC0 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				7881C1052245C73200CA2EC0 /* AutoScene.swift */,
-				7881C1062245C73200CA2EC0 /* AbstractScene.swift */,
-				7881C1072245C73200CA2EC0 /* StaffScene.swift */,
-			);
-			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78ED3C1F2245C171005D53BF /* Glossary.plist in Resources */,
+				7881C10E2246192100CA2EC0 /* Cover.png in Resources */,
 				786E14562245153100B5F548 /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
