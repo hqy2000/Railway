@@ -15,7 +15,7 @@ typealias Train = TrainNode
  - Note:
  In this simulation, blocks that are occupied by the train is represented in red, blocks where the train needs to slow down is marked in yellow, and blocks which trains can pass in full speed are presented in green.
  \
- If the number of people transferred per hour is represented in red, it means that not all trains are on the track.
+If the number of people transferred per hour is represented in red, it means that not all trains are on the track.
 
  */
 let numberOfTrainsOnEachTrack: Int = /*#-copy-source(numberOfTrainsOnEachTrack)*//*#-editable-code*/4/*#-end-editable-code*//*#-end-copy-source*/ // This is the number of the trains that will be placed on each track.

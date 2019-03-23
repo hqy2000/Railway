@@ -1,4 +1,4 @@
-You can add a train by initialing a new train.
+You can create a train by initialing a new train.
 ```
 Train(direction: <either .inBound or .outBound>, acceleration: <any positive number>, maximumSpeed: <any positive number>)
 ```

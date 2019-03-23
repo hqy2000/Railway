@@ -78,7 +78,7 @@ class AutoScene: AbstractScene {
      */
     private func placeInBoundTrains() {
         let inRegionTrains = self.trainsOnTrack.filter({ (train) -> Bool in // Check whether there is a train on the start of the track to prevent colision.
-            return Int(train.position.x) < -self.trackNode.range
+            return Int(train.position.x) < -self.trackNode.range - 5
         })
         let trainsToPlace = self.trainsToPlace.filter { (train) -> Bool in
             return train.direction == .inBound
@@ -100,7 +100,7 @@ class AutoScene: AbstractScene {
      */
     private func placeOutBoundTrains() {
         let inRegionTrains = self.trainsOnTrack.filter({ (train) -> Bool in // Same as above.
-            return Int(train.position.x) > self.trackNode.range
+            return Int(train.position.x) > self.trackNode.range - 5
         })
         let trainsToPlace = self.trainsToPlace.filter { (train) -> Bool in
             return train.direction == .outBound

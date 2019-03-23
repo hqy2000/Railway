@@ -17,7 +17,7 @@
 		5EF2F9B72054E6FB00191409 /* Chapters in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9B62054E6F900191409 /* Chapters */; };
 		786E14562245153100B5F548 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 786E14552245153100B5F548 /* background.jpg */; };
 		7881C10A2245C86D00CA2EC0 /* Sources in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 7881C1082245C85D00CA2EC0 /* Sources */; };
-		7881C10E2246192100CA2EC0 /* Cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 7881C10D2246192100CA2EC0 /* Cover.png */; };
+		7881C1102246203000CA2EC0 /* Cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 7881C10F2246203000CA2EC0 /* Cover.png */; };
 		78ED3C1F2245C171005D53BF /* Glossary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78ED3C1E2245C171005D53BF /* Glossary.plist */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +107,7 @@
 		5EF2F9B62054E6F900191409 /* Chapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapters; sourceTree = "<group>"; };
 		786E14552245153100B5F548 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../../TrainControlSystem.playground/Resources/background.jpg; sourceTree = "<group>"; };
 		7881C1082245C85D00CA2EC0 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
-		7881C10D2246192100CA2EC0 /* Cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cover.png; sourceTree = "<group>"; };
+		7881C10F2246203000CA2EC0 /* Cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cover.png; path = ../../../Cover.png; sourceTree = "<group>"; };
 		78ED3C1E2245C171005D53BF /* Glossary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Glossary.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,7 +239,7 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
-				7881C10D2246192100CA2EC0 /* Cover.png */,
+				7881C10F2246203000CA2EC0 /* Cover.png */,
 				78ED3C1E2245C171005D53BF /* Glossary.plist */,
 				786E14552245153100B5F548 /* background.jpg */,
 			);
@@ -368,8 +368,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				78ED3C1F2245C171005D53BF /* Glossary.plist in Resources */,
-				7881C10E2246192100CA2EC0 /* Cover.png in Resources */,
 				786E14562245153100B5F548 /* background.jpg in Resources */,
+				7881C1102246203000CA2EC0 /* Cover.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
