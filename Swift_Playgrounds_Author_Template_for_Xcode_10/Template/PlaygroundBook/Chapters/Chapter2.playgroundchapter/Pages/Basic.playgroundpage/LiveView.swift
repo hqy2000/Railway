@@ -3,8 +3,8 @@ import PlaygroundSupport
 typealias Train = TrainNode
 let numberOfTrainsOnEachTrack: Int = 4
 let blockCount: Int = 10
-let maximumSpeed: Double = 40.0
-let acceleration: Double = 10.0
+let maximumSpeed: Double = 50.0
+let acceleration: Double = 50.0
 
 var trains: [Train] = []
 

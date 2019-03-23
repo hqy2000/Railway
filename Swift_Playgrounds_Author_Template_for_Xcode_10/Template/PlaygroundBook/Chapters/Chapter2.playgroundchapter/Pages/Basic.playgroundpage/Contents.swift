@@ -21,8 +21,8 @@ If the number of people transferred per hour is represented in red, it means tha
 let numberOfTrainsOnEachTrack: Int = /*#-copy-source(numberOfTrainsOnEachTrack)*//*#-editable-code*/4/*#-end-editable-code*//*#-end-copy-source*/ // This is the number of the trains that will be placed on each track.
 let blockCount: Int = /*#-copy-source(blockCount)*//*#-editable-code*/10/*#-end-editable-code*//*#-end-copy-source*/ // This is the number of the signal blocks available on each track.
 //#-hidden-code
-let maximumSpeed: Double = 40.0
-let acceleration: Double = 0.0
+let maximumSpeed: Double = 50.0
+let acceleration: Double = 50.0
 
 var trains: [PlaygroundValue] = []
 

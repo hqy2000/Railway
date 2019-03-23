@@ -11,8 +11,8 @@ typealias Train = TrainNode
  */
 let numberOfTrainsOnEachTrack: Int = /*#-editable-code*/4/*#-end-editable-code*/ // This is the number of the trains that will be placed on each track.
 let blockCount: Int = /*#-editable-code*/10/*#-end-editable-code*/ // This is the number of the signal blocks available on each track.
-let maximumSpeed: Double = /*#-editable-code*/100/*#-end-editable-code*/ // This is the maximum speed of each train.
-let acceleration: Double = /*#-editable-code*/10/*#-end-editable-code*/ // This is the acceleration / deceleration of the train. If you want the train to speed up or slow down immediately, you can set this value to zero.
+let maximumSpeed: Double = /*#-editable-code*/50/*#-end-editable-code*/ // This is the maximum speed of each train.
+let acceleration: Double = /*#-editable-code*/50/*#-end-editable-code*/ // This is the acceleration / deceleration of the train. If you want the train to speed up or slow down immediately, you can set this value to zero.
 //#-hidden-code
 var trains: [PlaygroundValue] = []
 
