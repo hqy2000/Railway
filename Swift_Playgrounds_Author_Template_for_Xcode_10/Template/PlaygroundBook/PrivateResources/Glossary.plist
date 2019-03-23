@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Terms</key>
+	<dict>
+		<key>railway signalling</key>
+		<dict>
+			<key>Definition</key>
+			<string>Railway signalling is a system used to direct railway traffic and keep trains clear of each other at all times. </string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Introduction/Background</string>
+				<key>Title</key>
+				<string>Background</string>
+			</dict>
+		</dict>
+		<key>signalling block system</key>
+		<dict>
+			<key>Definition</key>
+			<string>Signalling blcok system is a railroad communications system that consists of a series of signals that divide a railway line into a series of sections, or &quot;blocks&quot;. </string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Introduction/Background</string>
+				<key>Title</key>
+				<string>Background</string>
+			</dict>
+		</dict>
+		<key>manual block system</key>
+		<dict>
+			<key>Definition</key>
+			<string>Railway signalling is a system used to direct railway traffic and keep trains clear of each other at all times. </string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Introduction/Background</string>
+				<key>Title</key>
+				<string>Background</string>
+			</dict>
+		</dict>
+		<key>automatic block signaling</key>
+		<dict>
+			<key>Definition</key>
+			<string>Railway signalling is a system used to direct railway traffic and keep trains clear of each other at all times. </string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Introduction/Background</string>
+				<key>Title</key>
+				<string>Background</string>
+			</dict>
+		</dict>
+		<key>railway signalling - 3</key>
+		<dict>
+			<key>Definition</key>
+			<string>Railway signalling is a system used to direct railway traffic and keep trains clear of each other at all times. </string>
+			<key>FirstUse</key>
+			<dict>
+				<key>PageReference</key>
+				<string>Introduction/Background</string>
+				<key>Title</key>
+				<string>Background</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
