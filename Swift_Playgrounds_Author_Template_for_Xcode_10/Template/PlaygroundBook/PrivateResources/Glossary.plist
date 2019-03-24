@@ -4,7 +4,7 @@
 <dict>
 	<key>Terms</key>
 	<dict>
-		<key>Staff block system</key>
+		<key>staff block system</key>
 		<dict>
 			<key>Definition</key>
 			<string>Staff blcok system is a railroad communications system that the train is required to hold a symbol to run a block.</string>
@@ -16,7 +16,7 @@
 				<string>Staff Block System</string>
 			</dict>
 		</dict>
-		<key>Railway signalling</key>
+		<key>railway signalling</key>
 		<dict>
 			<key>Definition</key>
 			<string>Railway signalling is a system used to direct railway traffic and keep trains clear of each other at all times. </string>
@@ -28,7 +28,7 @@
 				<string>Background</string>
 			</dict>
 		</dict>
-		<key>Signalling block system</key>
+		<key>signalling block system</key>
 		<dict>
 			<key>Definition</key>
 			<string>Signalling blcok system is a railroad communications system that consists of a series of signals that divide a railway line into a series of sections, or &quot;blocks&quot;. </string>
@@ -40,7 +40,7 @@
 				<string>Staff Block System</string>
 			</dict>
 		</dict>
-		<key>Manual block system</key>
+		<key>manual block system</key>
 		<dict>
 			<key>Definition</key>
 			<string>Authority to occupy a block is conveyed to trains by the use of wayside signals manually controlled by human operators following various procedures to communicate with other block stations to ensure separation of trains.</string>
@@ -52,7 +52,7 @@
 				<string>Staff Block System</string>
 			</dict>
 		</dict>
-		<key>Automatic block signalling</key>
+		<key>automatic block signalling</key>
 		<dict>
 			<key>Definition</key>
 			<string>Automatic block signaling uses a series of automated signals, normally lights or flags, that change their display, or aspect, based on the movement of trains past a sensor. </string>
