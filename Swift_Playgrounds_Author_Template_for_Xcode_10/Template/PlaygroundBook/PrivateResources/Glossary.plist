@@ -4,7 +4,7 @@
 <dict>
 	<key>Terms</key>
 	<dict>
-		<key>staff block system</key>
+		<key>Staff block system</key>
 		<dict>
 			<key>Definition</key>
 			<string>Staff blcok system is a railroad communications system that the train is required to hold a symbol to run a block.</string>
@@ -13,10 +13,10 @@
 				<key>PageReference</key>
 				<string>Introduction/Staff%20Block%20System</string>
 				<key>Title</key>
-				<string>Background</string>
+				<string>Staff Block System</string>
 			</dict>
 		</dict>
-		<key>railway signalling</key>
+		<key>Railway signalling</key>
 		<dict>
 			<key>Definition</key>
 			<string>Railway signalling is a system used to direct railway traffic and keep trains clear of each other at all times. </string>
@@ -28,7 +28,7 @@
 				<string>Background</string>
 			</dict>
 		</dict>
-		<key>signalling block system</key>
+		<key>Signalling block system</key>
 		<dict>
 			<key>Definition</key>
 			<string>Signalling blcok system is a railroad communications system that consists of a series of signals that divide a railway line into a series of sections, or &quot;blocks&quot;. </string>
@@ -37,13 +37,13 @@
 				<key>PageReference</key>
 				<string>Introduction/Staff%20Block%20System</string>
 				<key>Title</key>
-				<string>Background</string>
+				<string>Staff Block System</string>
 			</dict>
 		</dict>
-		<key>manual block system</key>
+		<key>Manual block system</key>
 		<dict>
 			<key>Definition</key>
-			<string>Railway signalling is a system used to direct railway traffic and keep trains clear of each other at all times. </string>
+			<string>Authority to occupy a block is conveyed to trains by the use of wayside signals manually controlled by human operators following various procedures to communicate with other block stations to ensure separation of trains.</string>
 			<key>FirstUse</key>
 			<dict>
 				<key>PageReference</key>
@@ -52,16 +52,16 @@
 				<string>Staff Block System</string>
 			</dict>
 		</dict>
-		<key>automatic block signalling</key>
+		<key>Automatic block signalling</key>
 		<dict>
 			<key>Definition</key>
-			<string>Railway signalling is a system used to direct railway traffic and keep trains clear of each other at all times. </string>
+			<string>Automatic block signaling uses a series of automated signals, normally lights or flags, that change their display, or aspect, based on the movement of trains past a sensor. </string>
 			<key>FirstUse</key>
 			<dict>
 				<key>PageReference</key>
-				<string>Introduction/Background</string>
+				<string>Automatic%20Block%20Signalling/Basic</string>
 				<key>Title</key>
-				<string>Background</string>
+				<string>Automatic Block Signalling</string>
 			</dict>
 		</dict>
 	</dict>

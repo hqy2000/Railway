@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Name</key>
-	<string>Automatic Block Signaling</string>
+	<string>Automatic Block Signalling</string>
 	<key>Pages</key>
 	<array>
 		<string>Basic.playgroundpage</string>
