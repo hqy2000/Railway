@@ -4,9 +4,9 @@ import PlaygroundSupport
 typealias Train = TrainNode
 //#-end-hidden-code
 /*:
- # Automatic Block Signaling
+ # Automatic Block Signalling
  
- [Automatic block signalling](glossary://automatic%20block%20signalling) is an advanced way used in our daily life, especially for double track railways. It divided the track into small blocks. When the train in on a block, it was marked as used so other trains cannot enter the block until the train moves into the next block. Also, other trains on a few blocks after the train will be required to slow down to prevent a collision.
+ [Automatic block signalling](glossary://Automatic%20block%20signalling) is an advanced way used in our daily life, especially for double track railways. It divided the track into small blocks. When the train in on a block, it was marked as used so other trains cannot enter the block until the train moves into the next block. Also, other trains on a few blocks after the train will be required to slow down to prevent a collision.
  
  Now you have the control of how many trains that will run on each track, and how many blocks are available on each track. The train will only be placed if there is a space. The train will move in the opposite direction after it reaches a station.
  

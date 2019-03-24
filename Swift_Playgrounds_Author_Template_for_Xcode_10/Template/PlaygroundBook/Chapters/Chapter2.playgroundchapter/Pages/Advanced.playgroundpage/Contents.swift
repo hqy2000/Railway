@@ -4,7 +4,7 @@ import PlaygroundSupport
 typealias Train = TrainNode
 //#-end-hidden-code
 /*:
- # Automatic Block Signaling
+ # Automatic Block Signalling
  
  Now you have additional control of the train. You can change the maximum speed, and the acceleration and the deceleration of the train. Try changing the parameters and see how it would affect efficiency.
  

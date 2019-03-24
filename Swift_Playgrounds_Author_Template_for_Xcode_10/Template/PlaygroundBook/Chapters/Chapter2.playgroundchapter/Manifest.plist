@@ -7,7 +7,7 @@
 	<key>Pages</key>
 	<array>
 		<string>Basic.playgroundpage</string>
-		<string>Advance.playgroundpage</string>
+		<string>Advanced.playgroundpage</string>
 	</array>
 </dict>
 </plist>

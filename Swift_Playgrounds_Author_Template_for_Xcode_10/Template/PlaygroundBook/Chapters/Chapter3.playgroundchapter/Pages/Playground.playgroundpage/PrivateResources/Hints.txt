@@ -1,5 +1,5 @@
-You can create a train by initialing a new train.
-```
+You can create a train by initialing a 'Train'.
+```swift
 Train(direction: <either .inBound or .outBound>, acceleration: <any positive number>, maximumSpeed: <any positive number>)
 ```
-You need to add the train to the array 'trains.' Each train should be seperated by a comma.
+You need to add the train to the array 'trains'. Each train should be seperated by a comma.
